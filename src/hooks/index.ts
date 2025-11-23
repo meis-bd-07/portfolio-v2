@@ -1,3 +1,4 @@
 import useWelcomeHook from './welcome-hook';
+import useDockHook from './dock-hook';
 
-export {useWelcomeHook};
+export {useWelcomeHook, useDockHook};

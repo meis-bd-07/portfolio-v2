@@ -2,10 +2,10 @@ import { WELCOME_CONS } from "@constants";
 import gsap from "gsap";
 
 type CleanupFn = () => void;
-type ISetupWelcomeTextHover = (container: HTMLElement | null, type: 'title' | 'subTitle') => CleanupFn | void;
+type ISetupWelcomeTextHover = (container: HTMLElement | null, type: 'title' | 'subTitle') => CleanupFn;
 
 const setupWelcomeTextHover: ISetupWelcomeTextHover = (container, type: 'title' | 'subTitle') => {
-    if(!container) return;
+    if(!container) return () => {};
     const letters = container.querySelectorAll<HTMLSpanElement>('span');
     const {min, max, default: base} = WELCOME_CONS.FONT_WEIGHTS[type]
 

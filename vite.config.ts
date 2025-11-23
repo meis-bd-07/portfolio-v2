@@ -17,6 +17,7 @@ export default defineConfig({
       '@hooks': resolve(dirname(fileURLToPath(import.meta.url)), './src/hooks'),
       '@stores': resolve(dirname(fileURLToPath(import.meta.url)), './src/stores'),
       '@helpers': resolve(dirname(fileURLToPath(import.meta.url)), './src/helpers'),
+      '@hocs': resolve(dirname(fileURLToPath(import.meta.url)), './src/hocs'),
     }
   }
 })

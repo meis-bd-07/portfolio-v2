@@ -11,8 +11,8 @@ const useWelcomeHook = () => {
         const subTitleCleanup =  setupWelcomeTextHover(subTitleRef.current, 'subTitle');
 
         return () => {
-            titleCleanup?.();
-            subTitleCleanup?.()
+            titleCleanup();
+            subTitleCleanup()
         }
     }, [])
 
