@@ -11,7 +11,7 @@ type IState =  {
 }
 
 type IActions = {
-    openWindow: (windowKey: IWindowKey, data: unknown) => void;
+    openWindow: (windowKey: IWindowKey, data?: unknown) => void;
     closeWindow: (windowKey: IWindowKey) => void;
     focusWindow: (windowKey: IWindowKey) => void;
 }

@@ -1,14 +1,17 @@
 import { HEADER_CONS } from "@constants";
+import useWindowStore from "@stores/window-store";
 import dayjs from "dayjs";
 
 const Navbar = () => {
+    const {openWindow} = useWindowStore(s => s)
+
     return (
         <nav>
             {/* left */}
             <div>
                 <img src="/images/logo.svg" alt="portfolio-logo" />
                 <p className="font-bold">Erfan's Portfolio</p>
-                <ul>{HEADER_CONS.navLinks.map(({id, name}) => <li key={id}><p>{name}</p></li>)}</ul>
+                <ul>{HEADER_CONS.navLinks.map(({id, name, type}) => <li onClick={() => openWindow(type)} key={id}><p>{name}</p></li>)}</ul>
             </div>
             {/* right */}
             <div>

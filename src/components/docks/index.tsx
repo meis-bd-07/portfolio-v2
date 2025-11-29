@@ -6,7 +6,7 @@ const Docks = () => {
     const {dockRef, toggleDockApp} = useDockHook();
     
     return (
-        <section id="dock">
+        <section id="dock" style={{zIndex: 99999}}>
             <div ref={dockRef} className="dock-container">
                 {DOCK_CONS.dockApps.map(({canOpen, icon, id, name}) => (
                     <div key={id ?? name} className="relative flex justify-center">

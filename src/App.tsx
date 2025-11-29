@@ -1,12 +1,13 @@
-import { Docks, Navbar, Welcome } from "@components"
+import { Docks, Home, Navbar, Welcome } from "@components"
 import { useEffect, useState } from "react";
 import gsap from "gsap";
 import { Draggable } from "gsap/Draggable";
-import TerminalWindow from "@components/windows/terminal";
 import dayjs from "dayjs";
 import { HomeIcon, Search, User2 } from "lucide-react";
 import { BatteryIcon } from "@components/mobile";
 import { useBattery } from "@hooks/use-battery";
+import { ContactsWindow, Gallery, ImageWindow, Resume, Safari, Terminal, TextWindow } from "@components/windows";
+import { Finder } from "@components/finder";
 gsap.registerPlugin(Draggable);
 
 const getSignalBars = (type) => {
@@ -81,26 +82,111 @@ function App() {
 
   return (
     <main>
+
+<div className="relative max-w-2xl mx-auto p-6 bg-green-500 text-gray-800 leading-relaxed" style={{display: 'none'}}>
+
+  <img
+    src="https://images.pexels.com/photos/3094799/pexels-photo-3094799.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+    alt="Profile"
+    className="
+      float-left
+      w-40 h-40 
+      rounded-full 
+      mr-6 mb-4 
+      shape-outside-circle
+      bg-red-600
+    "
+  />
+
+  <div>
+    <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras finibus, nulla
+    eget viverra porta, neque augue convallis purus, d ut egestas orci tortor vel
+    enim. Curabitur dignissim porttitor orci, ac bibendum lorem ultrices id.
+  </p>
+
+  <p>
+    Fusce a aliquet ex. Integer bibendum orci nunc, a volutpat augue consectetur
+    in. Sed ac nisl hendrerit, eleifend mi id, tincidunt mi.
+  </p>
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras finibus, nulla
+    eget viverra porta, neque augue convallis purus, ut egestas orci tortor vel
+    enim. Curabitur dignissim porttitor orci, ac bibendum lorem ultrices id.
+  </p>
+
+  <p>
+    Fusce a aliquet ex. Integer bibendum orci nunc, a volutpat augue consectetur
+    in. Sed ac nisl hendrerit, eleifend mi id, tincidunt mi.
+  </p>
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras finibus, nulla
+    eget viverra porta, neque augue convallis purus, ut egestas orci tortor vel
+    enim. Curabitur dignissim porttitor orci, ac bibendum lorem ultrices id.
+  </p>
+
+  <p>
+    Fusce a aliquet ex. Integer bibendum orci nunc, a volutpat augue consectetur
+    in. Sed ac nisl hendrerit, eleifend mi id, tincidunt mi.
+  </p>
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras finibus, nulla
+    eget viverra porta, neque augue convallis purus, ut egestas orci tortor vel
+    enim. Curabitur dignissim porttitor orci, ac bibendum lorem ultrices id.
+  </p>
+
+  <p>
+    Fusce a aliquet ex. Integer bibendum orci nunc, a volutpat augue consectetur
+    in. Sed ac nisl hendrerit, eleifend mi id, tincidunt mi.
+  </p>
+  </div>
+
+  <img
+    src="https://images.pexels.com/photos/3094799/pexels-photo-3094799.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+    alt="Profile"
+    className="
+      float-right
+      w-40 h-40 
+      rounded-full 
+      -ml-6 -mt-40 
+      shape-outside-circle
+      bg-red-600
+    "
+  />
+</div>
+
+
+
       <Navbar />
       <Welcome />
       <Docks />
 
       {/* window screens */}
-      <TerminalWindow />
+      <Terminal />
+      <Safari />
+      <Resume />
+      <Finder />
+      <TextWindow />
+      <ImageWindow />
+      <ContactsWindow />
+      <Home />
+      <Gallery />
 
       <div
         className="
           absolute right-10 bottom-10
-          w-[380px] max-h-[85vh] h-[85vh]
+          w-[380px] h-[85vh]
           rounded-[40px]
           border border-white/20
           bg-white/5
           backdrop-blur-xl
           shadow-[0_8px_30px_rgb(0_0_0/0.25)]
           overflow-hidden
+          iphone-17-height
+          hide-on-small-height
         "
+        style={{display: 'none'}}
       >
-
       <div className="flex flex-col h-full min-h-0">
 
         {/* iPhone Header */}
@@ -158,10 +244,39 @@ function App() {
         </div>
 
         {/* Scrollable area: flex-1 + min-h-0 allows overflow */}
-        <div className="flex-1 min-h-0 p-6 overflow-y-auto overscroll-contain scrollbar-thin scrollbar-track-transparent scrollbar-thumb-white/20 scrollbar-custom" style={{ WebkitOverflowScrolling: "touch" }}>
-          {Array.from({ length: 40 }).map((_, i) => (
+        <div className="flex-1 min-h-0 overflow-y-auto overscroll-contain scrollbar-thin scrollbar-track-transparent scrollbar-thumb-white/20 scrollbar-custom" style={{ WebkitOverflowScrolling: "touch" }}>
+          {/* image previewer */}
+          <div className="w-full bg-transparent mb-8">
+            <div className="relative w-full max-w-6xl mx-auto">
+              {/* cover */}
+              <div className="h-26 md:h-38 overflow-hidden">
+                <img
+                    src="./profiles/Open To Work.png"
+                    alt="profile"
+                    className="object-fill w-full h-full"
+                  />
+              </div>
+              {/* profile */}
+              <div className="absolute -bottom-8 left-4 md:left-6">
+                <div className="relative w-24 h-24 md:w-28 md:h-28 rounded-full ring-4 ring-white overflow-hidden shadow-lg">
+                  <img
+                    src="https://images.unsplash.com/photo-1493612276216-ee3925520721?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cmFuZG9tfGVufDB8fDB8fHww"
+                    alt="profile"
+                    className="object-cover w-full h-full"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* need to add another version like instagram */}
+
+
+          <div className="p-6">
+            {Array.from({ length: 40 }).map((_, i) => (
             <p key={i} className="text-white/80 mb-3">Item {i + 1} — portfolio content...</p>
           ))}
+          </div>
         </div>
 
         {/* Footer (optional) */}
